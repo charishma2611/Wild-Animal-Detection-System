@@ -4,18 +4,18 @@ import imghdr
 import geocoder
 import urllib.parse
 # Set up SMTP server details
-smtp_server = "smtp.gmail.com"
-smtp_port = 465  # For starttls
-smtp_username = "wilanimal.kvgce@gmail.com"
-smtp_password = "Admin@12345"
+smtp_server = "smpt mail"
+smtp_port = port number  # For starttls
+smtp_username = "username mail"
+smtp_password = "password"
 from datetime import datetime
 
 import mysql.connector
 mydb = mysql.connector.connect(
   host="localhost",
   user="root",
-  password="admin@123",
-  database="wildanimal"
+  password="mysql password",
+  database="database name"
 )
 import json
 # Load the JSON file
@@ -49,9 +49,9 @@ def inseerdata(email,detected_animal, detected_date, detected_location):
 
 def send_email(label,email):
     print(label)
-    Sender_Email = "wilanimal.kvgce@gmail.com"
+    Sender_Email = "your mail"
     Reciever_Email = email
-    Password = "vskftajkgipkdjky"
+    Password = "password"
     newMessage = EmailMessage()    #creating an object of EmailMessage class
     newMessage['Subject'] = "Animal Detected" #Defining email subject
     newMessage['From'] = Sender_Email  #Defining sender email
@@ -74,9 +74,9 @@ def send_email(label,email):
         smtp.send_message(newMessage)      #Sending email using send_message method by passing EmailMessage object
         print("done")
 def send_email_password(username, password, email):
-    Sender_Email = "wilanimal.kvgce@gmail.com"
+    Sender_Email = "sender mail"
     Reciever_Email = email
-    Password = "vskftajkgipkdjky"
+    Password = "password"
     newMessage = EmailMessage()    # creating an object of EmailMessage class
     newMessage['Subject'] = "Forgot Password-Animal Detected" # Defining email subject
     newMessage['From'] = Sender_Email  # Defining sender email
@@ -90,7 +90,7 @@ def send_email_password(username, password, email):
         KVGCE Student,Sullia
     ''', subtype='html')  # Defining email body
     print("done")
-    with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
+    with smtplib.SMTP_SSL('smtp mail', port number) as smtp:
         smtp.login(Sender_Email, Password) # Login to SMTP server
         smtp.send_message(newMessage)      # Sending email using send_message method by passing EmailMessage object
         print("done")
